@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sensor Readings</title>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Sensor Readings</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Meter ID</th>
+				<th>Reading</th>
+				<th>Unit</th>
+				<th>Timestamp</th>
+				<th>Status</th>
+				<th>Latitude</th>
+				<th>Longitude</th>
+				<th>Address</th>
+				<th>Manufacturer</th>
+				<th>Serial Number</th>
+				<th>Software Version</th>
+				<th>Battery Level</th>
+				<th>Signal Strength</th>
+			</tr>
+		</thead>
+		<tbody>
+		{{range .}}
+			<tr>
+				<td>{{.Meter_id}}</td>
+				<td>{{.Reading}}</td>
+				<td>{{.Unit}}</td>
+				<td>{{.Timestamp}}</td>
+				<td>{{.Status}}</td>
+				<td>{{.Location.Latitude}}</td>
+				<td>{{.Location.Longitude}}</td>
+				<td>{{.Location.Address}}</td>
+				<td>{{.Manufacturer}}</td>
+				<td>{{.Serial_number}}</td>
+				<td>{{.Software_version}}</td>
+				<td>{{.Battery_level}}</td>
+				<td>{{.Signal_strength}}</td>
+			</tr>
+		{{end}}
+		</tbody>
+        
+	</table>
+</body>
+</html>
